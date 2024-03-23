@@ -1,0 +1,20 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Universal Dev Container",
+	"build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+	"runArgs": [
+		"--userns=keep-id:uid=1000,gid=1000"
+	],
+	"containerUser": "node",
+	"updateRemoteUserUID": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+            ]
+        }
+    }
+}
