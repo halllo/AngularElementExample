@@ -3,34 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-element-example": {
+    "my-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/my-app",
+      "sourceRoot": "projects/my-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "outputPath": "dist/my-app",
+            "index": "projects/my-app/src/index.html",
+            "browser": "projects/my-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "projects/my-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/my-app/src/favicon.ico",
+              "projects/my-app/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/my-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -53,13 +53,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -68,21 +62,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-element-example:build:production"
+              "buildTarget": "my-app:build:production"
             },
             "development": {
-              "buildTarget": "angular-element-example:build:development"
+              "buildTarget": "my-app:build:development"
             }
-          },
-          "options": {
-            "proxyConfig": "src/proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-element-example:build"
+            "buildTarget": "my-app:build"
           }
         },
         "test": {
@@ -92,22 +83,113 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "projects/my-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/my-app/src/favicon.ico",
+              "projects/my-app/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/my-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "hello-element": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/hello-element",
+      "sourceRoot": "projects/hello-element/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/hello-element",
+            "index": "projects/hello-element/src/index.html",
+            "browser": "projects/hello-element/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/hello-element/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-element/src/favicon.ico",
+              "projects/hello-element/src/assets"
+            ],
+            "styles": [
+              "projects/hello-element/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "hello-element:build:production"
+            },
+            "development": {
+              "buildTarget": "hello-element:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "hello-element:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/hello-element/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-element/src/favicon.ico",
+              "projects/hello-element/src/assets"
+            ],
+            "styles": [
+              "projects/hello-element/src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

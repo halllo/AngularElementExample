@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <p>Hello!</p>
+    <p>Hello {{ name }}</p>
   `,
   styles: ``
 })
 export class HelloComponent {
-  t = "";
+  name = "world";
 }

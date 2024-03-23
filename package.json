@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --poll 500",
-    "build": "ng build --output-hashing=none --configuration production",
-    "package": "webpack"
+    "start": "ng serve my-app --poll 500",
+    "build": "ng build my-app",
+    "build-hello-element": "ng build hello-element --output-hashing=none --configuration production && webpack -c ./projects/hello-element/webpack.config.js"
   },
   "private": true,
   "dependencies": {
@@ -23,8 +23,8 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.0",
-    "@angular/cli": "^17.3.0",
+    "@angular-devkit/build-angular": "^17.3.1",
+    "@angular/cli": "^17.3.1",
     "@angular/compiler-cli": "^17.3.0",
     "@types/jasmine": "~5.1.0",
     "css-loader": "^6.10.0",

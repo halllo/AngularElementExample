@@ -1,8 +1,7 @@
 import { createApplication } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
-import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
-import { environment } from './environments/environment';
-import { HelloComponent } from './app/hello/hello.component';
+import { provideHttpClient } from '@angular/common/http';
+import { HelloComponent } from './hello.component';
 
 (async () => {
   
