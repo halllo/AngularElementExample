@@ -65,7 +65,10 @@
               "buildTarget": "my-app:build:production"
             },
             "development": {
-              "buildTarget": "my-app:build:development"
+              "buildTarget": "my-app:build:development",
+              "sslKey": "server.key",
+              "sslCert": "server.crt",
+              "ssl": true
             }
           },
           "defaultConfiguration": "development"
