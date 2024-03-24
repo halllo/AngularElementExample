@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class HelloComponent {
-  name = "world";
+  name = "world 😊";
 }

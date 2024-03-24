@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve my-app --poll 500 --ssl false",
     "build": "ng build my-app",
-    "build-hello-element": "ng build hello-element --output-hashing=none --configuration production && webpack -c ./projects/hello-element/webpack.config.js"
+    "build:hello-element": "ng build hello-element --output-hashing=none --configuration production && webpack -c ./projects/hello-element/webpack.config.js",
+    "refer:hello-element": "copy .\\dist\\hello-element\\browser\\hello-element.js .\\projects\\my-app\\src\\assets\\hello-element.js",
+    "watch:hello-element": "onchange \"projects/hello-element/src/**/*.{ts,html,scss}\" -- \"npm run build:hello-element && npm run refer:hello-element\""
   },
   "private": true,
   "dependencies": {
@@ -34,6 +36,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "onchange": "^7.1.0",
     "style-loader": "^3.3.4",
     "typescript": "~5.4.2",
     "webpack": "^5.91.0",

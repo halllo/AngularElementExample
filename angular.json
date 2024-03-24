@@ -32,7 +32,9 @@
             "styles": [
               "projects/my-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/my-app/src/assets/hello-element.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -194,5 +196,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
