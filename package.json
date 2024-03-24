@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve my-app --poll 500",
+    "start": "ng serve my-app --poll 500 --ssl false",
     "build": "ng build my-app",
     "build-hello-element": "ng build hello-element --output-hashing=none --configuration production && webpack -c ./projects/hello-element/webpack.config.js"
   },
